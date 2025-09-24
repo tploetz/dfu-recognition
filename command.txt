@@ -1,0 +1,1 @@
+python train_sam.py --hiera_path "./models/sam2_hiera_large.pt" --train_image_path "./data/DFU_split/ulcer/train/images/" --train_mask_path "./data/DFU_split/ulcer/train/labels/" --save_path "./model/" --epoch 20 --lr 0.001 --batch_size 12 --cuda_idx 0

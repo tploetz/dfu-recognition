@@ -1,0 +1,75 @@
+# YOLO Training Configuration File Example
+# This file demonstrates how to configure various parameters for YOLO training
+
+# Basic training parameters
+training:
+  epochs: 100                    # Number of training epochs
+  batch_size: 16                 # Batch size
+  imgsz: 640                     # Input image size
+  device: ''                     # Training device (empty string means auto selection)
+  workers: 8                     # Number of data loader worker processes
+  
+# Model parameters
+model:
+  pretrained: true               # Whether to use pretrained weights
+  freeze: null                   # Freeze first N layers (null means no freezing)
+  optimizer: 'auto'              # Optimizer type: SGD, Adam, AdamW, RMSProp, auto
+  
+# Learning rate parameters
+learning_rate:
+  lr0: 0.01                      # Initial learning rate
+  lrf: 0.01                      # Final learning rate ratio
+  momentum: 0.937                # SGD momentum
+  weight_decay: 0.0005           # Weight decay
+  warmup_epochs: 3               # Warmup epochs
+  warmup_momentum: 0.8           # Warmup momentum
+  warmup_bias_lr: 0.1            # Warmup bias learning rate
+  
+# Loss function weights
+loss_weights:
+  box: 7.5                       # Box loss weight
+  cls: 0.5                       # Classification loss weight
+  dfl: 1.5                       # DFL loss weight
+  
+# Data augmentation parameters
+augmentation:
+  hsv_h: 0.015                   # HSV hue augmentation
+  hsv_s: 0.7                     # HSV saturation augmentation
+  hsv_v: 0.4                     # HSV value augmentation
+  degrees: 0.0                   # Rotation angle range
+  translate: 0.1                 # Translation range
+  scale: 0.5                     # Scale range
+  shear: 0.0                     # Shear angle range
+  perspective: 0.0               # Perspective transformation
+  flipud: 0.0                    # Vertical flip probability
+  fliplr: 0.5                    # Horizontal flip probability
+  mosaic: 1.0                    # Mosaic augmentation probability
+  mixup: 0.0                     # Mixup augmentation probability
+  copy_paste: 0.0                # Copy-paste augmentation probability
+  
+# Validation parameters
+validation:
+  val: true                      # Validation during training
+  split: 'val'                   # Validation set split: val, test
+  conf: 0.001                    # Confidence threshold
+  iou: 0.6                       # IoU threshold
+  max_det: 300                   # Maximum detections
+  
+# Output parameters
+output:
+  project: 'runs/train'          # Project save path
+  name: 'exp'                    # Experiment name
+  exist_ok: false                # Allow overwriting existing experiments
+  plots: true                    # Save training plots
+  save_json: false               # Save COCO format JSON results
+  
+# Miscellaneous parameters
+misc:
+  seed: 0                        # Random seed
+  deterministic: false           # Deterministic training
+  single_cls: false              # Single class training
+  rect: false                    # Rectangular training
+  cos_lr: false                  # Cosine learning rate scheduler
+  close_mosaic: 10               # Epochs to close mosaic augmentation
+  amp: false                     # Automatic mixed precision training
+  verbose: false                 # Verbose output
