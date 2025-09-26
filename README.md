@@ -3,7 +3,7 @@
 ## Download Models & Request Dataset
 
 **Pre-trained Models**:
-- [Model Download Link](https://tinyurl.com/dfu-recognition-models) - Download all necessary model files including YOLO and SAM2-UNet
+- [Model Download Link](https://tinyurl.com/dfu-recognition-model) - Download all necessary model files including YOLO and SAM2-UNet
 
 **Dataset Request**:
 - [Dataset Request Form](https://gatech.co1.qualtrics.com/jfe/form/SV_3DkD7zGkA08G2KG) - Fill out this form to request access to our dataset for research purposes
